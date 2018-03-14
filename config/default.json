@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "c9ddbaed1936f3516d8fe3cf61d5fcad9a91ee41d9942def7801c7964cd871250afd37b375d47aadb7c85614d588f740c7aff46ddb7b76ab99045e9e5639bfcee386e9862f886fffdd4a4e8e9a404dd648326e957d98022630804ba152003fcee606ebe22cf10c81afea69e3b85acbeb3cb4480c338e445e8ba69a42313cc35877e7a84cec2a6c0a9dfc9666dc874fa74860cb06d88b097b4ed30e86d070cd476767c99eba64be4f9d66cdbd0845e233263cf89e5e5adb9fb264c257c089ce91dfeed8230ec6f4a800127104a2fad3947ab55f1a988411930fc1e3a9776f1772626ffbea57c8a2a0667d5fe3ed5c66671208d79200fa4e7713efec85ea530b38",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/preceptor"
+}
